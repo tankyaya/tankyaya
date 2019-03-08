@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮番图</title>
+</head>
+<body>
+<div>
+    <img src="../img/ad1.jpg" alt="" id="ad">
+    <p></p>
+    <button id="prev">上一张</button>
+    <button id="next">下一张</button>
+</div>
+<script>
+    var ad = document.getElementById("ad");
+    var prev = document.getElementById("prev");
+    var next = document.getElementById("next");
+    var max=6,min=1,now=min;
+
+    prev.onclick = function (){
+        if(now === min){
+            now=max;
+        }
+        else{
+            now=now-1;
+        }
+        ad.setAttribute("src","../img/ad"+now+".jpg");
+    };
+
+    next.onclick = function (){
+        if(now===max){
+            now=min;
+        }
+        else{
+            now=now+1;
+        }
+        ad.setAttribute("src","../img/ad"+now+".jpg");
+    };
+</script>
+</body>
+</html>
